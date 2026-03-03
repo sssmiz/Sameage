@@ -1,11 +1,17 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useApp } from "@/contexts/AppContext";
 
+interface LocalAnswer {
+  who: string;
+  text: string;
+  cardType: string;
+}
+
 export default function EndScreen() {
   const { fatherName } = useApp();
   const navigate = useNavigate();
   const location = useLocation();
-  const answers = (location.state as any)?.answers || [];
+  const answers: LocalAnswer[] = (location.state as { answers?: LocalAnswer[] })?.answers || [];
 
   return (
     <div className="screen active" id="screen-end">
@@ -20,10 +26,10 @@ export default function EndScreen() {
 
         <div className="answers-recap">
           <p className="recap-title">今日の記録</p>
-          {answers.filter((a: any) => a.text).length === 0 ? (
+          {answers.filter((a) => a.text).length === 0 ? (
             <p style={{ color: "#aaa", fontSize: 13 }}>記録なし（スキップされました）</p>
           ) : (
-            answers.filter((a: any) => a.text).map((a: any, i: number) => (
+            answers.filter((a) => a.text).map((a, i) => (
               <div className="recap-item" key={i}>
                 <div className="recap-who">{a.who === "father" ? fatherName : "あなた"}</div>
                 <div className="recap-q">{a.cardType}</div>
@@ -34,7 +40,7 @@ export default function EndScreen() {
         </div>
 
         <div className="next-year-note">
-          📅 <strong>来年の父の日（2027年6月）</strong>、アプリが「お父さんの〇歳のカード」を新たに届けます。毎年、まだ知らない父に出会い続けよう。
+          📅 <strong>来年の父の日（{new Date().getFullYear() + 1}年6月）</strong>、アプリが「お父さんの〇歳のカード」を新たに届けます。毎年、まだ知らない父に出会い続けよう。
         </div>
 
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>

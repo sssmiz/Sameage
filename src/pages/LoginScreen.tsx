@@ -12,7 +12,7 @@ export default function LoginScreen() {
         navigate(dest === "setup" ? "/setup" : "/role");
       });
     }
-  }, [currentUser, loading]);
+  }, [currentUser, loading, checkExistingFamily, navigate]);
 
   return (
     <div className="screen active" id="screen-login">

@@ -2,10 +2,18 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useApp } from "@/contexts/AppContext";
 
+interface AnswerData {
+  cardType: string;
+  question: string;
+  targetAge: number;
+  father?: { text: string };
+  child?: { text: string };
+}
+
 export default function CompareScreen() {
   const { fatherName, loadCompareData } = useApp();
   const navigate = useNavigate();
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<AnswerData[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

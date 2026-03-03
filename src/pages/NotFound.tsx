@@ -9,12 +9,12 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-        <a href="/" className="text-primary underline hover:text-primary/90">
-          Return to Home
+    <div className="screen active" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div style={{ textAlign: "center" }}>
+        <h1 style={{ fontSize: "3rem", fontWeight: "bold", marginBottom: "1rem", color: "var(--brown)" }}>404</h1>
+        <p style={{ fontSize: "1.2rem", color: "var(--brown)", opacity: 0.7, marginBottom: "1.5rem" }}>ページが見つかりません</p>
+        <a href="/" className="btn-primary" style={{ textDecoration: "none" }}>
+          <span>トップへ戻る</span>
         </a>
       </div>
     </div>

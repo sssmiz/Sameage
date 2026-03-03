@@ -1,73 +1,48 @@
-# Welcome to your Lovable project
+# SAME AGE — 父が、あなたと同じ年齢だった頃。
 
-## Project info
+## 概要
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**SAME AGE** は、父の日に父と子が「同い年」として対話するカードゲーム体験のプロトタイプです。
 
-## How can I edit this code?
+電通クリエイティブ デジタルクリエイティブ職 選考課題「新しい父の日体験」として制作しました。
 
-There are several ways of editing your application.
+父が子と同じ年齢だった頃の記憶・悩み・感情を掘り起こし、「親子」ではなく「同い年の人間同士」として向き合うことで、気まずさを超えた新しい関係を育みます。
 
-**Use Lovable**
+## 主な機能
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **年齢計算** — 子の年齢を入力すると、父が同い年だった年を自動算出
+- **カードゲーム** — DREAM / FEAR / SECRET / JOY / REGRET の5枚のカードで対話
+- **家族ペアリング** — コードで父子のアカウントをリンク
+- **回答記録** — Firebaseに回答を保存し、毎年の記録として蓄積
+- **回答比較** — 父と子の回答を並べて見比べる
 
-Changes made via Lovable will be committed automatically to this repo.
+## 技術スタック
 
-**Use your preferred IDE**
+- React 18 + TypeScript
+- Vite（ビルドツール）
+- Tailwind CSS + shadcn/ui
+- Firebase Authentication（Google ログイン）
+- Cloud Firestore（データ保存）
+- Framer Motion（アニメーション）
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## セットアップ
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# 依存パッケージのインストール
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 開発サーバーの起動
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## ディレクトリ構成
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```
+src/
+├── components/     # UIコンポーネント
+├── contexts/       # AppContext（状態管理）
+├── hooks/          # カスタムフック
+├── lib/            # Firebase設定、カードテンプレート
+├── pages/          # 各画面コンポーネント
+└── main.tsx        # エントリーポイント
+```
